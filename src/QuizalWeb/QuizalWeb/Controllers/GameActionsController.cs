@@ -9,7 +9,13 @@ namespace QuizalWeb.Controllers
 {
     public class GameActionsController : Controller
     {
-        public static quizRepo _quizRepo = new quizRepo();
+        private readonly IquizRepo _quizRepo;
+
+        public GameActionsController(IquizRepo quizRepo)
+        {
+            _quizRepo = quizRepo;
+        }
+
         // GET: api/GameActions
         public IEnumerable<string> Get()
         {
@@ -19,14 +25,15 @@ namespace QuizalWeb.Controllers
         // GET: api/GameActions/5
         public List<Question> Get(int id)
         {
-            using (var db = new quizDbContext())
-            {
-                var questions = db.QuestionTable
-                                .Where(quest => quest.QuizId == id)
-                                .Include(quest => quest.Answers);
+            //using (var db = new quizDbContext())
+            //{
+            //    var questions = db.QuestionTable
+            //                    .Where(quest => quest.QuizId == id)
+            //                    .Include(quest => quest.Answers);
 
-                return questions.ToList();
-            }
+            //    return questions.ToList();
+            //}
+            return _quizRepo.GetQuestions(id);
         }
 
         // POST: api/GameActions

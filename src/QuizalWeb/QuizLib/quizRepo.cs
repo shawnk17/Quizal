@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace quizLibrary
 {
-    public class quizRepo
+    public class quizRepo : IquizRepo
     {
         private readonly quizDbContext _db;
         public quizRepo(quizDbContext db)

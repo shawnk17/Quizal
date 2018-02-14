@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using QuizalWeb.Data;
 using QuizalWeb.Models;
 using QuizalWeb.Services;
+using quizLibrary;
 
 namespace QuizalWeb
 {
@@ -29,12 +30,17 @@ namespace QuizalWeb
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddDbContext<quizDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
+
+            services.AddScoped<IquizRepo, quizRepo>();
 
             services.AddMvc();
         }

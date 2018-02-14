@@ -7,7 +7,13 @@ namespace QuizalWeb.Controllers
 {
     public class AnswersController : Controller
     {
-        public static quizRepo _quizRepo = new quizRepo();
+        private readonly IquizRepo _quizRepo;
+
+        public AnswersController(IquizRepo quizRepo)
+        {
+            _quizRepo = quizRepo;
+        }
+
         // GET: Answers
         public ActionResult Index(int questionId)
         {

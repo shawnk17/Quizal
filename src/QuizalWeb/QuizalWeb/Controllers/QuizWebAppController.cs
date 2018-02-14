@@ -8,7 +8,12 @@ namespace QuizalWeb.Controllers
 {
     public class QuizWebAppController : Controller
     {
-        public static quizRepo _quizRepo = new quizRepo();
+        private readonly IquizRepo _quizRepo;
+
+        public QuizWebAppController(IquizRepo quizRepo)
+        {
+            _quizRepo = quizRepo;
+        }        
         // GET: QuizWebApp
 
         public ActionResult Index()
