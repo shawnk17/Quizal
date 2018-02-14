@@ -1,0 +1,45 @@
+﻿@model IEnumerable<quizLibrary.Answer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<h4> @ViewBag.QuizTitle | Question | Answers</h4>
+
+<p>
+    @Html.ActionLink("Create New Answer", "Create", new { questionId = ViewBag.QuestionId })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Answers
+        </th>
+        <th>
+            Is Correct ?
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsCorrect)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.AnswerId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.AnswerId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.AnswerId })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div>
+    @Html.ActionLink("Back to Questions", "../Questions/Index", new { quizId = ViewBag.QuestionInfo.QuizId })
+</div>

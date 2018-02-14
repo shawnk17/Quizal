@@ -1,0 +1,55 @@
+﻿@model IEnumerable<quizLibrary.Quiz>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>All Quizzes</h2>
+
+<p>
+    @Html.ActionLink("Create New Quiz", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            Quizzes
+        </th>
+        <th class="text-center">Play</th>
+        <th>Manage</th>
+    </tr>
+
+    @foreach (var quiz in Model)
+    {
+        <tr>
+            <td>
+                @quiz.Title
+            </td>
+            <td class="text-center">
+                <button class="btn btn-xs btn-default"> @Html.ActionLink("Play", "GameArea", new { id = quiz.QuizId })
+ </button>
+            </td>
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-default btn-xs dropdown-toggle" type="button" id="manage" data-toggle="dropdown">
+                        Manage
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="manage">
+                        <li>
+                            @Html.ActionLink("Edit", "Edit", new { id = quiz.QuizId })
+                        </li>
+                        <li>
+                            @Html.ActionLink("Details", "Details", new { id = quiz.QuizId })
+                        </li>
+                        <li>
+                            @Html.ActionLink("Questions", "../Questions/Index", new { quizId = quiz.QuizId })
+                        </li>
+                        <li> @Html.ActionLink("Delete", "Delete", new { id = quiz.QuizId }) </li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    }
+
+</table>
