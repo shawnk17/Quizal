@@ -1,11 +1,8 @@
 ﻿@model quizLibrary.Question
-
 @{
     ViewBag.Title = "Create";
 }
-
 <h2>Create</h2>
-
 
 @using (Html.BeginForm())
 {
@@ -22,7 +19,6 @@
                 @Html.ValidationMessageFor(model => model.QuizId, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -30,7 +26,6 @@
                 @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
@@ -38,11 +33,9 @@
         </div>
     </div>
 }
-
 <div>
     @Html.ActionLink("Back to List", "Index", new { quizId = ViewBag.QuizId })
 </div>
-
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

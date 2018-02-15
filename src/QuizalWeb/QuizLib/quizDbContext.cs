@@ -7,6 +7,7 @@ namespace quizLibrary
     {
         public quizDbContext(DbContextOptions<quizDbContext> options)
          : base(options)
+
         {
         }
 

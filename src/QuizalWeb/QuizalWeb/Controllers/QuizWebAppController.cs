@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using quizLibrary;
 using Microsoft.AspNetCore.Http;
 
-
 namespace QuizalWeb.Controllers
 {
     public class QuizWebAppController : Controller
@@ -35,7 +34,7 @@ namespace QuizalWeb.Controllers
 
         // POST: QuizWebApp/Create
         [HttpPost]
-        public ActionResult Create(Quiz newQuiz, FormCollection collection)
+        public ActionResult Create(Quiz newQuiz, IFormCollection collection)
         {
             try
             {
@@ -58,7 +57,7 @@ namespace QuizalWeb.Controllers
 
         // POST: QuizWebApp/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, Quiz EditedQuiz, FormCollection collection)
+        public ActionResult Edit(int id, Quiz EditedQuiz, IFormCollection collection)
         {
             try
             {
@@ -80,7 +79,7 @@ namespace QuizalWeb.Controllers
 
         // POST: QuizWebApp/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, IFormCollection collection)
         {
             try
             {

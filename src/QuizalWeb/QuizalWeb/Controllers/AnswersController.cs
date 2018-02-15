@@ -39,7 +39,7 @@ namespace QuizalWeb.Controllers
 
         // POST: Answers/Create
         [HttpPost]
-        public ActionResult Create(Answer newAnswer, FormCollection collection)
+        public ActionResult Create(Answer newAnswer, IFormCollection collection)
         {
             try
             {
@@ -61,7 +61,7 @@ namespace QuizalWeb.Controllers
 
         // POST: Answers/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, Answer editedAnswer, FormCollection collection)
+        public ActionResult Edit(int id, Answer editedAnswer, IFormCollection collection)
         {
             try
             {
@@ -83,7 +83,7 @@ namespace QuizalWeb.Controllers
 
         // POST: Answers/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, IFormCollection collection)
         {
             try
             {

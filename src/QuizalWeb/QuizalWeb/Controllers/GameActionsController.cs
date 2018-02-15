@@ -23,16 +23,10 @@ namespace QuizalWeb.Controllers
         }
 
         // GET: api/GameActions/5
+        [Route("api/gameActions/{id}")]
         public List<Question> Get(int id)
         {
-            //using (var db = new quizDbContext())
-            //{
-            //    var questions = db.QuestionTable
-            //                    .Where(quest => quest.QuizId == id)
-            //                    .Include(quest => quest.Answers);
-
-            //    return questions.ToList();
-            //}
+         
             return _quizRepo.GetQuestions(id);
         }
 

@@ -1,25 +1,17 @@
 ﻿
-
 <h2>GameArea</h2>
-
 <span id="gameId" class="hidden">@ViewBag.QuizId</span>
-
 <br />
 <div id="question-content" class="well"></div>
-
 <ul id="answers-holder" class="list-group"></ul>
-
 <div id="answer-result-holder" class="container"></div>
 <br />
 <button id="previous-button" class="btn btn-sm btn-sm game-btn">Previous</button>
 <button id="next-button" class="btn btn-sm btn-sm game-btn">Next</button>
 
-
 <hr />
 @Html.ActionLink("Back Home", "Index", "Home")
 
-
-
-@section Scripts {
-    @Scripts.Render("~/Scripts/gameActions.js")
-}
+        @section Scripts {
+        <script src="/js/gameActions.js"></script>  
+  }

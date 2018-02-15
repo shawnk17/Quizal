@@ -12,7 +12,7 @@ namespace QuizalWeb.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "QuizWebApp");
         }
 
         public IActionResult About()
