@@ -25,9 +25,9 @@ var answersHolder = document.getElementById("answers-holder"),
 
 // Render out question and answers
 function renderQuestion() {
-    questionContent.innerText = game.questions[game.current].Content;
+    questionContent.innerText = game.questions[game.current].content;
     var count = 0;
-    for (var answer in game.questions[game.current].Answers) {
+    for (var answer in game.questions[game.current].answers) {
 
         var answerLi = document.createElement("li"),
             answerPosition = document.createElement("span");
@@ -36,7 +36,8 @@ function renderQuestion() {
         answerPosition.classList.add("hidden");
         answerLi.classList.add("list-group-item");
         answerLi.classList.add("answer-item");
-        answerLi.innerText = game.questions[game.current].Answers[answer].Content;
+
+        answerLi.innerText = game.questions[game.current].answers[answer].content;
 
         answerLi.appendChild(answerPosition);
         answersHolder.appendChild(answerLi);
@@ -70,7 +71,7 @@ function clearElements() {
 
 // On answer click events
 $(document).on('click', ".answer-item", function (event) {
-    var result = game.questions[game.current].Answers[event.currentTarget.getElementsByTagName("span")[0].innerText].IsCorrect;
+    var result = game.questions[game.current].answers[event.currentTarget.getElementsByTagName("span")[0].innerText].isCorrect;
 
     if (result) {
         answerResultHolder.classList.remove("wrong");

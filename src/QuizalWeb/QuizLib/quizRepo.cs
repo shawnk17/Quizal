@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace quizLibrary
 {
@@ -26,8 +23,10 @@ namespace quizLibrary
         public Quiz GetQuizById(int id)
         {
 
-
-            Quiz targetQuiz = _db.QuizTable.Find(id);
+            Quiz targetQuiz = _db.QuizTable
+                .Include(q => q.Questions)
+                .ThenInclude(qu => qu.Answers)
+                .FirstOrDefault(q => q.QuizId == id);
             return targetQuiz;
 
         }
@@ -73,9 +72,14 @@ namespace quizLibrary
         public List<Question> GetQuestions(int QuizId)
         {
 
-            var questions = from question in _db.QuestionTable
-                            where question.QuizId == QuizId
-                            select question;
+            //var questions = from question in _db.QuestionTable
+
+            //                where question.QuizId == QuizId
+            //                select question;
+            var questions = _db.QuestionTable
+                .Include(q => q.Answers)
+                .Where(q => q.QuizId == QuizId);
+
             return questions.ToList();
 
         }

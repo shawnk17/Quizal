@@ -26,7 +26,6 @@ namespace QuizalWeb.Controllers
         [Route("api/gameActions/{id}")]
         public List<Question> Get(int id)
         {
-         
             return _quizRepo.GetQuestions(id);
         }
 
