@@ -22,7 +22,6 @@ var answersHolder = document.getElementById("answers-holder"),
     previousBtn = document.getElementById("previous-button"),
     answerResultHolder = document.getElementById("answer-result-holder");
 
-
 // Render out question and answers
 function renderQuestion() {
     questionContent.innerText = game.questions[game.current].content;
