@@ -9,6 +9,7 @@ namespace quizLibrary
          : base(options)
 
         {
+
         }
 
         public DbSet<Quiz> QuizTable { get; set; }

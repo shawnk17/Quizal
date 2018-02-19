@@ -12,9 +12,13 @@ namespace quizLibrary
         {
             Answers = new List<Answer>();
         }
+
         public int QuestionId { get; set; }
+
         public int QuizId { get; set; }
+
         public string Content { get; set; }
+
         public List<Answer> Answers { get; set; }
     }
 }

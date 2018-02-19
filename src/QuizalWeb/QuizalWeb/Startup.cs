@@ -43,7 +43,8 @@ namespace QuizalWeb
                 googleOptions.ClientId = Configuration["Authentication:Google:ClientId"];
                 googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
             })
-             .AddFacebook(facebookOptions =>
+                
+                .AddFacebook(facebookOptions =>
              {
                  facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
                  facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];

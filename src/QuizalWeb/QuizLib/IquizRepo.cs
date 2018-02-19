@@ -13,6 +13,7 @@ namespace quizLibrary
         void EditAnswer(Answer editedAnswer);
         void EditQuestion(Question editedQuestion);
         void EditQuiz(Quiz editedQuiz);
+
         Answer GetAnswerById(int id);
         List<Answer> GetAnswers(int QuestionId);
         Question GetQuestionById(int id);
