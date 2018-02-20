@@ -75,7 +75,8 @@ $(document).on('click', ".answer-item", function (event) {
     if (result) {
         answerResultHolder.classList.remove("wrong");
         answerResultHolder.classList.add("correct");
-    } else {
+    }
+    else {
         answerResultHolder.classList.remove("correct");
         answerResultHolder.classList.add("wrong");
     }

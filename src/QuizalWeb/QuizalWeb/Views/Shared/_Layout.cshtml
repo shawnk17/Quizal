@@ -41,7 +41,6 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Quiz Web App", "Index", "QuizWebApp")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -51,9 +50,38 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
+        <aside class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <span class="fa-stack fa-lg">
+                        <a class="nounderline" href="https://www.facebook.com/home.php?">
+                            <span class="fa fa-spin fab fa-rebel"></span>
+                        </a>
+                    </span>
+                    Facebook
+                </div>
 
+                <div class="col-md-3">
+                    <span class="fa-stack fa-lg">
+                        <a class="nounderline" href="https://www.linkedin.com/in/shawn-dholakia-kisnad-b5668527/">
+                            <span class="far fa-spin fab fa-linkedin"></span>
+                        </a>
+                    </span>
+                    Linkedin
+                </div>
+
+                <div class="col-md-3">
+                    <span class="fa-stack fa-lg">
+                        <a class="nounderline" href="https://github.com/shawnk17">
+                            <span class="fa fa-spin fab fa-github"></span>
+                        </a>
+                    </span>
+                    GitHub
+                </div>
+            </div>
+        </aside>
         <footer>
-            <p>&copy;2017-2018 Shawnsville, LLC</p>
+            <p>&copy;2018 Shawnsville, LLC</p>
         </footer>
     </div>
 
